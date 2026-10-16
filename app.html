@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweeper Math</title>
+<style>
+  :root { --accent: #4a5a6e; --warn: #a83232; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 16px 64px; background: #f6f7f8; color: #24272b;
+         font-family: Georgia, 'Times New Roman', serif; }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { color: var(--accent); font-size: 2.2rem; margin: 0 0 4px; }
+  .tag { font-style: italic; color: var(--accent); margin: 0 0 28px; }
+  .boundary { border-left: 4px solid var(--warn); background: #fdf1f1; padding: 16px 20px;
+              border-radius: 8px; margin: 0 0 28px; }
+  .boundary h2 { color: var(--warn); font-size: 1.1rem; margin: 0 0 8px; }
+  .boundary p { margin: 0; line-height: 1.5; }
+  .card { background: #fff; border: 1px solid #dcdfe3; border-left: 4px solid var(--accent);
+          border-radius: 8px; padding: 20px 24px; margin: 0 0 24px; }
+  .card h2 { margin: 0 0 14px; font-size: 1.25rem; }
+  label { display: block; font-size: 0.95rem; margin: 10px 0 4px; }
+  input { width: 100%; max-width: 220px; padding: 8px 10px; font-size: 1rem;
+          border: 1px solid #c2c8cf; border-radius: 6px; background: #f0f2f4; }
+  .out { margin-top: 16px; font-size: 1.05rem; font-weight: bold; color: var(--accent);
+         line-height: 1.5; }
+  .out.err { color: var(--warn); }
+  footer { margin-top: 32px; font-size: 0.85rem; color: #7c828a; line-height: 1.5; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Sweeper Math</h1>
+  <p class="tag">Hopper truth, lap truth and season truth - labeled norms, honest arithmetic.</p>
+
+  <div class="boundary">
+    <h2>The boundary</h2>
+    <p>Sweeper Math keeps leaf-volume, lap-time and season-pile arithmetic only. It gives no
+    verdicts about what any sweeper can pick up - lawn condition, wet leaves and machine limits
+    are the manual's call.</p>
+  </div>
+
+  <div class="card">
+    <h2>The hopper truth</h2>
+    <label for="h-lawn">Your lawn (square feet)</label>
+    <input id="h-lawn" type="number" step="any" value="5000">
+    <label for="h-rate">Leaf fall (cubic feet per 1,000 square feet)</label>
+    <input id="h-rate" type="number" step="any" value="8">
+    <label for="h-hop">Hopper capacity (cubic feet)</label>
+    <input id="h-hop" type="number" step="any" value="25">
+    <p class="out" id="h-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The lap truth</h2>
+    <label for="l-lawn">Your lawn (square feet)</label>
+    <input id="l-lawn" type="number" step="any" value="5000">
+    <label for="l-width">Sweep width (inches)</label>
+    <input id="l-width" type="number" step="any" value="42">
+    <label for="l-pace">Your pace (feet per minute)</label>
+    <input id="l-pace" type="number" step="any" value="200">
+    <p class="out" id="l-out"></p>
+  </div>
+
+  <div class="card">
+    <h2>The season truth</h2>
+    <label for="s-fills">Hopper fills per weekend</label>
+    <input id="s-fills" type="number" step="any" value="2">
+    <label for="s-weeks">Weeks of leaf season</label>
+    <input id="s-weeks" type="number" step="any" value="6">
+    <label for="s-hop">Hopper capacity (cubic feet)</label>
+    <input id="s-hop" type="number" step="any" value="25">
+    <p class="out" id="s-out"></p>
+  </div>
+
+  <footer>
+    Every figure here is hypothetical arithmetic on labeled norms, not a statement about any real
+    machine or lawn. <a href="index.html">About Sweeper Math</a>
+  </footer>
+</main>
+<script src="engine.js"></script>
+<script>
+function num(id) { return parseFloat(document.getElementById(id).value); }
+function render(id, fn) {
+  const el = document.getElementById(id);
+  try {
+    el.textContent = fn();
+    el.classList.remove("err");
+  } catch (e) {
+    el.textContent = e.message;
+    el.classList.add("err");
+  }
+}
+function update() {
+  render("h-out", () => hopperTruth(num("h-lawn"), num("h-rate"), num("h-hop")));
+  render("l-out", () => lapTruth(num("l-lawn"), num("l-width"), num("l-pace")));
+  render("s-out", () => seasonTruth(num("s-fills"), num("s-weeks"), num("s-hop")));
+}
+document.querySelectorAll("input").forEach(i => i.addEventListener("input", update));
+update();
+</script>
+</body>
+</html>
