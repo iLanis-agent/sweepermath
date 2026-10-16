@@ -1,0 +1,245 @@
+[
+ {
+  "fn": "hopperTruth",
+  "args": [
+   5000,
+   8,
+   25
+  ],
+  "out": "5000 square feet at 8 cubic feet of leaves a thousand is 40.0 cubic feet - 2 fills of the 25-cubic-foot hopper, a few trips to the pile."
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   3000,
+   8,
+   25
+  ],
+  "out": "3000 square feet at 8 cubic feet of leaves a thousand is 24.0 cubic feet - 1 fill of the 25-cubic-foot hopper, one fill and done."
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   9000,
+   8,
+   25
+  ],
+  "out": "9000 square feet at 8 cubic feet of leaves a thousand is 72.0 cubic feet - 3 fills of the 25-cubic-foot hopper, a few trips to the pile."
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   25000,
+   8,
+   25
+  ],
+  "out": "25000 square feet at 8 cubic feet of leaves a thousand is 200.0 cubic feet - 8 fills of the 25-cubic-foot hopper, a working pile honestly."
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   60000,
+   8,
+   25
+  ],
+  "out": "60000 square feet at 8 cubic feet of leaves a thousand is 480.0 cubic feet - 20 fills of the 25-cubic-foot hopper, the pile will need its own zip code."
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   1000,
+   4,
+   12
+  ],
+  "out": "1000 square feet at 4 cubic feet of leaves a thousand is 4.0 cubic feet - 1 fill of the 12-cubic-foot hopper, one fill and done."
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   0,
+   8,
+   25
+  ],
+  "err": "the lawn size must be above zero"
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   5000,
+   0,
+   25
+  ],
+  "err": "the leaf rate must be above zero"
+ },
+ {
+  "fn": "hopperTruth",
+  "args": [
+   5000,
+   8,
+   0
+  ],
+  "err": "the hopper size must be above zero"
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   5000,
+   42,
+   200
+  ],
+  "out": "5000 square feet at a 42-inch sweep and 200 feet a minute is 7.1 minutes of laps - a quick lap honestly."
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   2000,
+   42,
+   200
+  ],
+  "out": "2000 square feet at a 42-inch sweep and 200 feet a minute is 2.9 minutes of laps - a quick lap honestly."
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   15000,
+   42,
+   200
+  ],
+  "out": "15000 square feet at a 42-inch sweep and 200 feet a minute is 21.4 minutes of laps - a working set of laps."
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   40000,
+   42,
+   200
+  ],
+  "out": "40000 square feet at a 42-inch sweep and 200 feet a minute is 57.1 minutes of laps - a long loop honestly."
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   100000,
+   42,
+   200
+  ],
+  "out": "100000 square feet at a 42-inch sweep and 200 feet a minute is 142.9 minutes of laps - a marathon of laps honestly."
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   5000,
+   26,
+   150
+  ],
+  "out": "5000 square feet at a 26-inch sweep and 150 feet a minute is 15.4 minutes of laps - a working set of laps."
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   0,
+   42,
+   200
+  ],
+  "err": "the lawn size must be above zero"
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   5000,
+   0,
+   200
+  ],
+  "err": "the sweep width must be above zero"
+ },
+ {
+  "fn": "lapTruth",
+  "args": [
+   5000,
+   42,
+   0
+  ],
+  "err": "the pace must be above zero"
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   2,
+   6,
+   25
+  ],
+  "out": "2 fills a weekend over 6 weeks of the 25-cubic-foot hopper is 300.0 cubic feet of leaves - a pile taller than the fence."
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   1,
+   2,
+   25
+  ],
+  "out": "1 fill a weekend over 2 weeks of the 25-cubic-foot hopper is 50.0 cubic feet of leaves - a modest pile honestly."
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   1,
+   6,
+   25
+  ],
+  "out": "1 fill a weekend over 6 weeks of the 25-cubic-foot hopper is 150.0 cubic feet of leaves - a working pile."
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   2,
+   8,
+   25
+  ],
+  "out": "2 fills a weekend over 8 weeks of the 25-cubic-foot hopper is 400.0 cubic feet of leaves - a pile taller than the fence."
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   3,
+   8,
+   25
+  ],
+  "out": "3 fills a weekend over 8 weeks of the 25-cubic-foot hopper is 600.0 cubic feet of leaves - a neighborhood landmark honestly."
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   1,
+   1,
+   25
+  ],
+  "out": "1 fill a weekend over 1 week of the 25-cubic-foot hopper is 25.0 cubic feet of leaves - a modest pile honestly."
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   0,
+   6,
+   25
+  ],
+  "err": "the fills must be above zero"
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   2,
+   0,
+   25
+  ],
+  "err": "the weeks must be above zero"
+ },
+ {
+  "fn": "seasonTruth",
+  "args": [
+   2,
+   6,
+   0
+  ],
+  "err": "the hopper size must be above zero"
+ }
+]
